@@ -32,7 +32,7 @@ export class TestingManager {
         const originalVariation = Reified.GATE_DELAY_VARIATION;
 
         Reified.GATE_DELAY = 25;
-        Reified.GATE_DELAY_VARIATION = 5;
+        Reified.GATE_DELAY_VARIATION = 0;
 
         for (const [givenInputs, expectedOutputs] of cases) {
             if (inputs.length !== givenInputs.length) throw new Error("Mismatched input lengths.");
@@ -42,7 +42,7 @@ export class TestingManager {
                 input.element.classList.toggle("activated", givenInputs[index]);
             }
 
-            await DELAY(components.length * (25 + 5));
+            await DELAY(components.length * (25 * 2) + 50);
 
             const realOutputs = outputs.map((output) => output.element.classList.contains("activated"));
 
@@ -121,7 +121,7 @@ export class TestingManager {
         const originalVariation = Reified.GATE_DELAY_VARIATION;
 
         Reified.GATE_DELAY = 25;
-        Reified.GATE_DELAY_VARIATION = 5;
+        Reified.GATE_DELAY_VARIATION = 0;
 
         const table: boolean[][][] = [];
 
@@ -130,11 +130,13 @@ export class TestingManager {
                 input.element.classList.toggle("activated", perm[index]);
             }
 
-            await DELAY(components.length * (25 + 5));
+            await DELAY(components.length * (25 * 2) + 50);
 
             const realOutputs = outputs.map((output) => output.element.classList.contains("activated"));
 
             table.push([perm, realOutputs]);
+
+            await DELAY();
         }
 
         originalActivations.forEach((value, i) => inputs[i].element.classList.toggle("activated", value));

@@ -129,7 +129,7 @@ export class KeybindsManager {
     static assign(chord: string, run: (e: KeyboardEvent) => void) {
         return Object.fromEntries(
             this.expand(chord)
-                .map<[Stringifiable, (e: KeyboardEvent) => void]>((keys) => [keys, run])
+                .map<[string, (e: KeyboardEvent) => void]>((keys) => [keys, run])
                 .concat([[chord, run]]),
         );
     }
@@ -141,9 +141,7 @@ type Split<S extends string, D extends string = "", R extends readonly unknown[]
     ? Split<B, D, [...R, A]>
     : [...R, S];
 
-type Stringifiable = string | number | bigint | boolean | null | undefined;
-
-type Join<A, S extends string = "", R extends string = ""> = A extends [infer X extends Stringifiable, ...infer Y]
+type Join<A, S extends string = "", R extends string = ""> = A extends [infer X extends string, ...infer Y]
     ? Join<Y, S, R extends "" ? X : `${R}${S}${X}`>
     : R;
 

@@ -1,5 +1,5 @@
 {
-    "name": "@kelsny/gatesim",
+    "name": "@k-tten/gatesim",
     "description": "Logical circuits playground.",
     "version": "0.0.0",
     "private": true,
@@ -11,20 +11,20 @@
     },
     "devDependencies": {
         "ts-loader": "^9.4.1",
-        "typescript": "^4.9.3",
+        "typescript": "^5.9.3",
         "webpack": "^5.75.0",
         "webpack-cli": "^5.0.0"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/kelsny/gatesim.git"
+        "url": "git+https://github.com/k-tten/gatesim.git"
     },
     "keywords": [],
-    "author": "kelsny <cursors.owo.uwu@gmail.com>",
+    "author": "k-tten <cursors.owo.uwu@gmail.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/kelsny/gatesim/issues"
+        "url": "https://github.com/k-tten/gatesim/issues"
     },
-    "homepage": "https://github.com/kelsny/gatesim#readme",
+    "homepage": "https://github.com/k-tten/gatesim#readme",
     "main": "webpack.config.js"
 }

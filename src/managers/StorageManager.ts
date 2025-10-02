@@ -1,5 +1,5 @@
 export class StorageManager {
-    static readonly prefix = "kelsny.gatesim:";
+    static readonly prefix = "k-tten.gatesim:";
 
     static readonly storage =
         typeof window !== "undefined"
