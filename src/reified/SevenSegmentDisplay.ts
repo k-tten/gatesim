@@ -125,8 +125,6 @@ export class SevenSegmentDisplay extends Reified {
             height: height * devicePixelRatio,
         }));
 
-        this.#ctx;
-
         segments.forEach(({ x, y, width, height }, i) => {
             this.#ctx.fillStyle = out[i] ? GET_ACTIVATED_COLOR() : GET_GRAY_COLOR();
             this.#ctx.strokeStyle = "black";
